@@ -486,7 +486,7 @@ function App() {
           
           <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
             <Typography variant="caption" color="text.secondary">
-              AI Code Assistant v1.0 — Powered by LLM — <GitHubIcon sx={{ fontSize: 14, verticalAlign: 'middle' }} /> <a href="#" style={{ color: 'inherit', textDecoration: 'underline' }}>GitHub</a>
+              AI Code Assistant v1.0 — Powered by LLM — <GitHubIcon sx={{ fontSize: 14, verticalAlign: 'middle' }} /> <a href="https://github.com/OmarAminAI/AIassistance_code-frontend" style={{ color: 'inherit', textDecoration: 'underline' }}>GitHub</a>
             </Typography>
           </Box>
           </Paper>
