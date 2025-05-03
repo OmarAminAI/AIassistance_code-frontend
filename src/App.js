@@ -17,7 +17,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus, prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 // Create theme with dark mode
 const theme = createTheme({
   palette: {
@@ -245,19 +245,79 @@ function App() {
             position: 'relative'
           }}
         >
-          <Box sx={{ position: 'relative', mb: 4, textAlign: 'center' }}>
-            <Typography variant="h4" gutterBottom sx={{ 
-              background: 'linear-gradient(45deg, #64b5f6, #4db6ac)', 
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              fontWeight: 800
-            }}>
-              AI Code Assistant
-            </Typography>
-            <Typography variant="subtitle1" color="text.secondary" gutterBottom>
-              Explain, Fix, or Generate Code with AI
-            </Typography>
-          </Box>
+          <Box sx={{ position: 'relative', mb: 4, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
+  <Box 
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        mb: 0.5,
+        gap: 2,
+      }}
+  >
+    {/* Logo Circle */}
+    <Box
+      sx={{
+        width: 74,
+        height: 74,
+        borderRadius: '50%',
+        background: 'linear-gradient(135deg, #39c5ef 20%, #5ad7a1 80%)',
+        boxShadow: '0 0 28px 3px rgba(100,181,246,0.18)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        mr: 1,
+        position: 'relative',
+      }}
+    >
+      {/* Inner Glow */}
+      <Box
+        sx={{
+          position: 'absolute',
+          width: 88,
+          height: 88,
+          borderRadius: '50%',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          background: ' radial-gradient(circle, #45e1e1 0%, transparent 75%)',
+          zIndex: 0,
+          opacity: 0.25
+        }}
+      />
+      {/* Icon */}
+      <CodeIcon sx={{ fontSize: 38, color: '#fff', zIndex: 1, textShadow: '0 2px 12px rgba(0,0,0,0.36)' }} />
+      {/* Optional: lightbulb for 'wise': <EmojiObjectsIcon sx={{ fontSize: 34, color: '#fff', zIndex: 1, ml: 1 }} /> */}
+    </Box>
+    {/* Title and Tagline */}
+    <Box sx={{ textAlign: 'left' }}>
+      <Typography 
+        variant="h3"
+        component="span"
+        sx={{
+          fontWeight: 900,
+          fontFamily: "Inter, Roboto, Helvetica, Arial, sans-serif",
+          letterSpacing: '-2.2px',
+          background: 'linear-gradient(45deg, #64b5f6, #4db6ac 65%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          textShadow: '0 1px 8px rgba(76,222,224,0.11)'
+        }}
+      >
+        CodeWise
+      </Typography>
+      <Typography 
+        variant="subtitle1" 
+        sx={{ 
+          color: theme => alpha('#ffffff', 0.76), 
+          fontWeight: 400, 
+          letterSpacing: '0.7px',
+          mt: '-1px'
+        }}>
+        Explain, Fix, or Generate Code with AI
+      </Typography>
+    </Box>
+  </Box>
+</Box>
           
           <Tabs 
             value={tab} 
